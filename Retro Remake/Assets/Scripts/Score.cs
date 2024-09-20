@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class Score : MonoBehaviour
 {
-    public Text scoreText;
-    public int score;
+    public int currentScore;
+    public TMPro.TMP_Text scoreText;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +18,6 @@ public class Score : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = score.ToString();
+        scoreText.SetText("Score: " + currentScore.ToString());
     }
 }

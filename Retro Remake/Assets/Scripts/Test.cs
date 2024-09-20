@@ -33,4 +33,10 @@ public class Test : MonoBehaviour
         //Input.GetKeyUp(); PRESSING the button
         //Input.GetKeyDown(); RELEASING the button
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        Debug.Log("Hallo");
+    }
+
 }

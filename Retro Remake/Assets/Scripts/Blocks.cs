@@ -11,6 +11,6 @@ public class Blocks : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
-        scoreValue.score += pointWorth;
+        scoreValue.currentScore += pointWorth;
     }
 }
