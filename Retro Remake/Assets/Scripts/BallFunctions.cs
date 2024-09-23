@@ -10,6 +10,8 @@ public class BallFunctions : MonoBehaviour
     public float speed = 6.5f;
     public bool ballFell;
     public Transform player;
+    public Score blocksDestroyed;
+    public bool gameWon;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +39,11 @@ public class BallFunctions : MonoBehaviour
         {
             SceneManager.LoadScene(sceneName: "GameOver");
             Time.timeScale = 0;
+        }
+
+        if (!gameWon)
+        {
+
         }
     }
 }

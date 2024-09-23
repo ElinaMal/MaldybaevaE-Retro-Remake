@@ -9,11 +9,7 @@ public class Score : MonoBehaviour
     public int currentScore;
     public TMPro.TMP_Text scoreText;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public int objectsDestroyed;
 
     // Update is called once per frame
     void Update()
