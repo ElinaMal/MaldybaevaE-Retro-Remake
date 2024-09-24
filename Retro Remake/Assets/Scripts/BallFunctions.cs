@@ -1,17 +1,12 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UIElements;
 
 public class BallFunctions : MonoBehaviour
 {
     public float speed = 6.5f;
     public bool ballFell;
-    public Transform player;
-    public Score blocksDestroyed;
-    public bool gameWon;
+
+    private SpriteRenderer _Sr;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +16,32 @@ public class BallFunctions : MonoBehaviour
         Time.timeScale = 1;
 
         ballFell = false;
+
+        _Sr = GetComponent<SpriteRenderer>();
+
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (_Sr.color == Color.white)
+        {
+            _Sr.color = Color.blue;
+        }
+
+        else if (_Sr.color == Color.blue)
+        {
+            _Sr.color = Color.green;
+        }
+
+        else if (_Sr.color == Color.green)
+        {
+            _Sr.color = Color.magenta;
+        }
+
+        else if (_Sr.color == Color.magenta)
+        {
+            _Sr.color = Color.white;
+        }
     }
 
     // Update is called once per frame
@@ -30,6 +51,7 @@ public class BallFunctions : MonoBehaviour
         {
             ballFell = true;
         }
+
         else
         {
             ballFell = false;
@@ -37,13 +59,8 @@ public class BallFunctions : MonoBehaviour
         
         if (ballFell)
         {
-            SceneManager.LoadScene(sceneName: "GameOver");
+            SceneManager.LoadScene("GameOver");
             Time.timeScale = 0;
-        }
-
-        if (!gameWon)
-        {
-
         }
     }
 }
