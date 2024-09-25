@@ -15,7 +15,6 @@ public class Score : MonoBehaviour
     {
         scoreText.SetText("Score: " + currentScore.ToString());
 
-
         if (objectsDestroyed >= 80)
         {
             gameWon = true;
@@ -28,6 +27,11 @@ public class Score : MonoBehaviour
         if (gameWon)
         {
             SceneManager.LoadScene("Level 2");
+        }
+
+        if (objectsDestroyed >= 82)
+        {
+            SceneManager.LoadScene("You Win");
         }
     }
 }

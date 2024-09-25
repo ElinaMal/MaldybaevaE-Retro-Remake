@@ -5,6 +5,9 @@ public class BallFunctions : MonoBehaviour
 {
     public float speed = 6.5f;
     public bool ballFell;
+    public GameObject prefab;
+
+    public bool upgradePresent = false;
 
     private SpriteRenderer _Sr;
 
@@ -61,6 +64,15 @@ public class BallFunctions : MonoBehaviour
         {
             SceneManager.LoadScene("GameOver");
             Time.timeScale = 0;
+        }
+
+        if (upgradePresent)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Instantiate(prefab);
+                upgradePresent = false;
+            }
         }
     }
 }
