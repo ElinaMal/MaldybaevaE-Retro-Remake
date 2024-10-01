@@ -1,3 +1,4 @@
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,12 +10,12 @@ public class Score : MonoBehaviour
     public bool gameWon;
     public int objectsDestroyed;
 
-
     // Update is called once per frame
     void Update()
     {
         scoreText.SetText("Score: " + currentScore.ToString());
 
+        
         if (objectsDestroyed >= 80)
         {
             gameWon = true;
@@ -26,12 +27,7 @@ public class Score : MonoBehaviour
 
         if (gameWon)
         {
-            SceneManager.LoadScene("Level 2");
-        }
-
-        if (objectsDestroyed >= 82)
-        {
-            SceneManager.LoadScene("You Win");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }

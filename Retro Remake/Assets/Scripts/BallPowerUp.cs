@@ -6,7 +6,7 @@ public class BallPowerUp : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        reference.upgradePresent = true;
+        reference.upgradePresent ++;
         Destroy(gameObject);
     }
 }

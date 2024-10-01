@@ -7,7 +7,7 @@ public class BallFunctions : MonoBehaviour
     public bool ballFell;
     public GameObject prefab;
 
-    public bool upgradePresent = false;
+    public int upgradePresent = 0;
 
     private SpriteRenderer _Sr;
 
@@ -66,12 +66,12 @@ public class BallFunctions : MonoBehaviour
             Time.timeScale = 0;
         }
 
-        if (upgradePresent)
+        if (upgradePresent > 0)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 Instantiate(prefab);
-                upgradePresent = false;
+                upgradePresent --;
             }
         }
     }
