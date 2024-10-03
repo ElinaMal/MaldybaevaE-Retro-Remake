@@ -125,14 +125,14 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 1.1
   m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 6
 --- !u!114 &4476465527962770822
 MonoBehaviour:
@@ -150,6 +150,6 @@ MonoBehaviour:
   right: 100
   up: 0
   down: 0
-  speed: 8
-  jumpHeight: 15
+  speed: 8.5
+  jumpHeight: 0
   jump: 0
